@@ -134,6 +134,7 @@ img {
         background: url("../images/skyBg.jpg") no-repeat center;
         background-size: cover;
         z-index: -4;
+        opacity: .5;
     }
     [class^="stars"] {
         position: fixed;
@@ -146,13 +147,13 @@ img {
     .starsMiddle {
         background: url("../images/middle.png");
         background-size: 115px;
-        animation: orbit-counter-clock-wise 380s infinite linear;
+        animation: orbit-counter-clock-wise 460s infinite linear;
         // 560s
     }
     .starsFront {
         background: url("../images/front.png");
         background-size: 185px;
-        animation: orbit-clock-wise 180s infinite linear;
+        animation: orbit-clock-wise 260s infinite linear;
         // 360s
     }
 }

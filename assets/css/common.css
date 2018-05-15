@@ -268,7 +268,8 @@ img {
     bottom: 0;
     background: url("../images/skyBg.jpg") no-repeat center;
     background-size: cover;
-    z-index: -4; }
+    z-index: -4;
+    opacity: .5; }
   .indexBg [class^="stars"] {
     position: fixed;
     top: -50%;
@@ -279,13 +280,13 @@ img {
   .indexBg .starsMiddle {
     background: url("../images/middle.png");
     background-size: 115px;
-    -webkit-animation: orbit-counter-clock-wise 380s infinite linear;
-    animation: orbit-counter-clock-wise 380s infinite linear; }
+    -webkit-animation: orbit-counter-clock-wise 460s infinite linear;
+    animation: orbit-counter-clock-wise 460s infinite linear; }
   .indexBg .starsFront {
     background: url("../images/front.png");
     background-size: 185px;
-    -webkit-animation: orbit-clock-wise 180s infinite linear;
-    animation: orbit-clock-wise 180s infinite linear; }
+    -webkit-animation: orbit-clock-wise 260s infinite linear;
+    animation: orbit-clock-wise 260s infinite linear; }
 
 /* Theme */
 nav {
@@ -788,6 +789,39 @@ nav {
         font-weight: 300;
         font-family: "Monserrat", "Roboto";
         letter-spacing: 0.1em; }
+    .workList .item a {
+      position: relative; }
+      .workList .item a h1 {
+        position: relative; }
+        .workList .item a h1:before, .workList .item a h1:after {
+          display: block;
+          content: attr(data-glitch);
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          opacity: .8; }
+        .workList .item a h1:after {
+          color: #f0f;
+          z-index: -2; }
+        .workList .item a h1:before {
+          color: #0ff;
+          z-index: -1; }
+      .workList .item a:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0; }
+      .workList .item a:hover h1:before {
+        -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5;
+        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5; }
+      .workList .item a:hover h1:after {
+        -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5;
+        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5; }
     .workList .item .skill {
       margin: 35px 0 0; }
       .workList .item .skill li {
