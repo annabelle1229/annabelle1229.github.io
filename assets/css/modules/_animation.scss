@@ -1,0 +1,28 @@
+// background star animation
+@keyframes orbit-clock-wise {
+    0% { opacity: 0.4; transform: rotate(0deg); }
+    2% { opacity: 0.8; }
+    4% { opacity: 0.2; }
+    5% { opacity: 0.8; }
+    100% { opacity: 0.4; transform: rotate(360deg); }
+}
+@keyframes orbit-counter-clock-wise {
+    from { transform: rotate(360deg); } to { transform: rotate(0deg); }
+}
+
+// navigation background
+@keyframes navBg {
+	0% { background: url("../images/navBg02.jpg") no-repeat left center; }
+	50% { background: url("../images/navBg02.jpg") no-repeat right center; }
+	100% { background: url("../images/navBg02.jpg") no-repeat left center; }
+}
+
+// link glitch effect
+@keyframes glitch {
+	0% { transform: translate(0) }
+	20% { transform: translate(-2px, 2px) }
+	40% { transform: translate(-2px, -2px) }
+	60% { transform: translate(2px, 2px) }
+	80% { transform: translate(2px, -2px) }
+	100% { transform: translate(0) }
+}

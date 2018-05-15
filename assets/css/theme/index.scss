@@ -1,0 +1,50 @@
+.indexWrapper {
+    position: fixed;
+    left: 0; right: 0; top: 46%;
+    max-width: 365px;
+    margin: 0 auto;
+    text-align: center;
+    p {
+        margin: 10px 0 0;
+        letter-spacing: 0.1em;
+        font-size: 12px;
+        font-size: $px12;
+        font-weight: 300;
+    }
+}
+@media screen and (max-width: 640px) {
+	.indexWrapper {
+        left: 0; right: 0; top: 284px;
+        width: 62.5%;
+        max-width: 235px;
+        p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            font-size: $px12;
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+	.indexWrapper {
+        left: 0; right: 0; top: 257px;
+        width: 62.5%;
+        max-width: 235px;
+        p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            font-size: $px12;
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+	.indexWrapper {
+        left: 0; right: 0; top: 223px;
+        width: 62.5%;
+        max-width: 235px;
+        p {
+            margin: 5px 0 0;
+            font-size: 12px;
+            font-size: $px12;
+        }
+    }
+}

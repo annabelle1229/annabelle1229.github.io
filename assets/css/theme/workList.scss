@@ -1,0 +1,69 @@
+.workList {
+    width: 100%;
+    .section {
+        display: flex;
+        align-items: center;
+    }
+    .item {
+        width: 60%;
+        max-width: 710px;
+        margin: 0 auto 60px;
+        .pic {
+            width: 100%;
+            min-height: 330px;
+            background: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            h1 {
+                transform: translateX(-15%);
+                font-size: 46px;
+                font-size: $px46;
+                font-weight: 300;
+                font-family: "Monserrat", "Roboto";
+                letter-spacing: 0.1em;
+            }
+        }
+        .skill {
+            margin: 35px 0 0;
+            li {
+                line-height: 2;
+                color: #a8a8a8;
+                letter-spacing: 0.05em;
+                font-size: 14px;
+                font-size: $px14;
+                padding: 0 0 0 12px;
+                background: url("../images/icon/dot.png") no-repeat left center;
+                background-size: 5px;
+            }
+        }
+    }
+}
+.arrow {
+    position: fixed;
+    left: 0; right: 0; bottom: 60px;
+    margin: 0 auto;
+    text-align: center;
+    cursor: pointer;
+    span {
+        display: block;
+        font-size: 14px;
+        font-size: $px14;
+        font-weight: 300;
+        margin: 0 0 3px;
+    }
+    img {
+        width: 12px;
+        margin: 0;
+    }
+}
+@media screen and (max-width: 640px) {
+	// 414
+}
+@media screen and (max-width: 375px) {
+	
+}
+@media screen and (max-width: 320px) {
+	
+}

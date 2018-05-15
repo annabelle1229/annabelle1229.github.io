@@ -1,0 +1,164 @@
+/* Variables */
+@import "helper/_variables.scss";
+
+/* Modules */
+@import "modules/_animation.scss";
+@import "modules/_fonts.scss";
+@import "modules/_iframe-responsive.scss";
+
+* {
+    box-sizing: border-box;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+html, body {
+    height:100%;
+    width:100%;
+    max-width:100%;
+    margin:0;
+    padding: 0;
+    overflow-x:hidden;
+}
+html {
+    position: relative;
+}
+body {
+    font-family: "Roboto", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+    line-height: $line-height;
+    background: $body-bg;
+}
+body.fixed {
+    height: 100%;
+    overflow: hidden;
+}
+main, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block
+}
+nav ul {
+    list-style: none
+}
+a {
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+input, select {
+    vertical-align: middle
+}
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+::selection {
+    background: #ff2287;
+    color: #fff;
+}
+.clear {
+    clear: both;
+    width: 0; height: 0px;
+    margin: 0; padding: 0;
+    border: none;
+    overflow: hidden;
+}
+.wrapper {
+    color: #fff;
+    height:100%;
+}
+.indexBg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    .grid {
+        width:100%; height: 100%;
+        background: url("../images/grid.png") repeat;
+        opacity: 0.09;
+    }
+    &:before {
+        content: "";
+        position: fixed;
+        top: 0; left: 0; right: 0;
+        width: 1px; height: 100%;
+        margin: 0 auto;
+        background: #fff;
+        opacity: 0.1;
+    }
+    .dotleft {
+        position: fixed;
+        top: 0; left: 40px;
+        width:105px; height: 100%;
+        background: url("../images/dot.png") repeat;
+        background-size: 100%;
+    }
+    .dotright {
+        position: fixed;
+        bottom: 60px; right: 0;
+        width:105px; height: 95px;
+        background: url("../images/dot.png") repeat;
+        background-size: 100%;
+    }
+    .circle {
+        position: fixed;
+        top: 20px; bottom: 20px; left: 0; right: 0;
+        width: 100%;
+        max-width: 715px;
+        margin: 0 auto;
+        background: url("../images/circle.png") no-repeat center;
+        background-size: contain;
+        opacity: 0.2;
+        z-index: -1;
+    }
+    .gradientMask {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgb(12,18,28);
+        background: radial-gradient(circle, rgba(12,18,28,0) 0%, rgba(12,18,28,1) 50%);
+        z-index: -2;
+    }
+    .starBg {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: url("../images/skyBg.jpg") no-repeat center;
+        background-size: cover;
+        z-index: -4;
+    }
+    [class^="stars"] {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        z-index: -3;
+    }
+    .starsMiddle {
+        background: url("../images/middle.png");
+        background-size: 115px;
+        animation: orbit-counter-clock-wise 380s infinite linear;
+        // 560s
+    }
+    .starsFront {
+        background: url("../images/front.png");
+        background-size: 185px;
+        animation: orbit-clock-wise 180s infinite linear;
+        // 360s
+    }
+}
+
+/* Theme */
+@import "theme/menu.scss";
+@import "theme/index.scss";
+@import "theme/about.scss";
+@import "theme/workList.scss";
