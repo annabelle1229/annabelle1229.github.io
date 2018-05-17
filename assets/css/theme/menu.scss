@@ -261,7 +261,7 @@ nav {
 @media screen and (max-width: 640px) {
 	nav {
         .toggle {
-            top: 266px; left: 10px;
+            top: 266px; left: 4px;
             span {
                 background: rgba(255,255,255,0.5);
             }
@@ -273,7 +273,7 @@ nav {
         } 
     }
     .mail {
-        top: 283px; right: 24px;
+        top: 283px; right: 18px;
         opacity: 0.5;
     }
     .mail.on {
@@ -307,11 +307,11 @@ nav {
 @media screen and (max-width: 375px) {
 	nav {
         .toggle {
-            top: 241px; left: 10px;
+            top: 241px; left: 4px;
         } 
     }
     .mail {
-        top: 257px; right: 24px;
+        top: 257px; right: 18px;
     }
     .nav-wrapper {
         .navContent {
@@ -336,11 +336,11 @@ nav {
 @media screen and (max-width: 320px) {
 	nav {
         .toggle {
-            top: 206px; left: 10px;
+            top: 206px; left: 4px;
         } 
     }
     .mail {
-        top: 220px; right: 24px;
+        top: 220px; right: 18px;
     }
     .nav-wrapper {
         .navContent {

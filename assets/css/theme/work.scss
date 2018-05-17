@@ -1,0 +1,353 @@
+.workWrapper {
+    width: 100%;
+    .keyvisual {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        background: url("../images/workList/demo_w.jpg") no-repeat top center;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            width: 85%;
+            text-align: center;
+            font-size: 46px;
+            font-size: $px46;
+            font-weight: 300;
+            font-family: "Monserrat", "Roboto";
+            letter-spacing: 0.1em;
+        }
+        &:before {
+            content:"";
+            display: block;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width:100%; height: 100%;
+            background: url("../images/grid.png") repeat;
+            opacity: 0.1;
+        }
+        .arrowWork {
+            position: absolute;
+            left: 0; right: 0; bottom: 60px;
+            margin: 0 auto;
+            text-align: center;
+            cursor: pointer;
+            opacity: 1;
+            transition: $transition-default;
+            span {
+                display: block;
+                font-size: 14px;
+                font-size: $px14;
+                font-weight: 300;
+                margin: 0 0 3px;
+            }
+            img {
+                width: 12px;
+                margin: 0;
+            }
+        }
+        .arrowWork.hide {
+            opacity: 0;
+            transition: $transition-default;
+        }
+    }
+    .workContent {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 0 40px;
+        .mainSection {
+            display: flex;
+            justify-content: space-between;
+            max-width: 720px;
+            margin: 200px auto 100px;
+            .skill {
+                width: 50%;
+                padding: 0 60px 0 0;
+                li {
+                    line-height: 2;
+                    letter-spacing: 0.05em;
+                    font-size: 14px;
+                    font-size: $px14;
+                    padding: 0 0 0 12px;
+                    background: url("../images/icon/dot.png") no-repeat left center;
+                    background-size: 5px;
+                }
+            }
+            .detail {
+                width: 50%;
+                padding: 0 0 0 60px;
+                p {
+                    font-size: 14px;
+                    font-size: $px14;
+                    color: #a8a8a8;
+                }
+                a {
+                    display: inline-block;
+                    margin: 60px 0 0;
+                    font-size: 14px;
+                    font-size: $px14;
+                    text-decoration: none;
+                    color: #fff;
+                    img {
+                        width: 18px;
+                        vertical-align: middle;
+                        margin: 0 8px 0 0;
+                    }
+                }
+            }
+        }
+        .pic {
+            text-align: center;
+            height: 600px;
+            background: #333;
+        }
+        .txt {
+            margin: 20px 0 50px;
+            h2 {
+                font-size: 38px;
+                font-size: $px38;
+                font-family: "Monserrat", "Roboto";
+                font-weight: 300;
+                letter-spacing: 0.06em;
+            }
+            p {
+                font-size: 14px;
+                font-size: $px14;
+                letter-spacing: 0.02em;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1000px) {
+    .workWrapper {
+        .workContent {
+            width: 72%;
+        }
+    }
+}
+@media screen and (max-width: 640px) {
+    .workWrapper {
+        .keyvisual {
+            height: 85vh;
+            h1 {
+                width: 75%;
+                font-size: 34px;
+                font-size: $px34;
+                line-height: 1.2;
+            }
+            .arrowWork {
+                left: 0; right: 0; bottom: 24px;
+                span {
+                    font-size: 12px;
+                    font-size: $px12;
+                }
+                img {
+                    width: 9px;
+                    margin: 0;
+                }
+            }
+        }
+        .workContent {
+            width: 65%;
+            max-width: 420px;
+            padding: 0 0 30px;
+            .mainSection {
+                flex-wrap: wrap;
+                margin: 120px auto 50px;
+                .skill {
+                    width: 100%;
+                    padding: 0;
+                    margin: 0 0 20px;
+                    li {
+                        font-size: 12px;
+                        font-size: $px12;
+                        padding: 0 0 0 12px;
+                        background: url("../images/icon/dot.png") no-repeat left center;
+                        background-size: 5px;
+                    }
+                }
+                .detail {
+                    width: 100%;
+                    padding: 0;
+                    p {
+                        font-size: 12px;
+                        font-size: $px12;
+                    }
+                    a {
+                        margin: 40px 0 0;
+                        font-size: 12px;
+                        font-size: $px12;
+                        img {
+                            width: 18px;
+                            margin: 0 8px 0 0;
+                        }
+                    }
+                }
+            }
+            .pic {
+                text-align: center;
+                height: 200px;
+                background: #333;
+            }
+            .txt {
+                margin: 20px 0 50px;
+                h2 {
+                    font-size: 30px;
+                    font-size: $px30;
+                }
+                p {
+                    font-size: 12px;
+                    font-size: $px12;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 375px) {
+	.workWrapper {
+        .keyvisual {
+            h1 {
+                margin: 5px 0 0;
+                font-size: 30px;
+                font-size: $px30;
+            }
+            .arrowWork {
+                left: 0; right: 0; bottom: 24px;
+                span {
+                    font-size: 12px;
+                    font-size: $px12;
+                }
+                img {
+                    width: 9px;
+                    margin: 0;
+                }
+            }
+        }
+        .workContent {
+            width: 65%;
+            max-width: 420px;
+            .mainSection {
+                flex-wrap: wrap;
+                margin: 110px auto 40px;
+                .skill {
+                    margin: 0 0 20px;
+                    li {
+                        font-size: 12px;
+                        font-size: $px12;
+                        padding: 0 0 0 12px;
+                        background: url("../images/icon/dot.png") no-repeat left center;
+                        background-size: 5px;
+                    }
+                }
+                .detail {
+                    width: 100%;
+                    padding: 0;
+                    p {
+                        font-size: 12px;
+                        font-size: $px12;
+                    }
+                    a {
+                        margin: 34px 0 0;
+                        font-size: 12px;
+                        font-size: $px12;
+                        img {
+                            width: 16px;
+                            margin: 0 6px 0 0;
+                        }
+                    }
+                }
+            }
+            .pic {
+                text-align: center;
+                height: 200px;
+                background: #333;
+            }
+            .txt {
+                margin: 20px 0 40px;
+                h2 {
+                    font-size: 30px;
+                    font-size: $px30;
+                }
+                p {
+                    font-size: 12px;
+                    font-size: $px12;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+	.workWrapper {
+        .keyvisual {
+            h1 {
+                margin: 15px 0 0;
+                font-size: 26px;
+                font-size: $px26;
+            }
+            .arrowWork {
+                left: 0; right: 0; bottom: 20px;
+                span {
+                    font-size: 10px;
+                    font-size: $px10;;
+                }
+                img {
+                    width: 8px;
+                    margin: 0;
+                }
+            }
+        }
+        .workContent {
+            width: 65%;
+            max-width: 420px;
+            .mainSection {
+                flex-wrap: wrap;
+                margin: 90px auto 30px;
+                .skill {
+                    margin: 0 0 15px;
+                    li {
+                        font-size: 10px;
+                        font-size: $px10;
+                        padding: 0 0 0 12px;
+                        background: url("../images/icon/dot.png") no-repeat left center;
+                        background-size: 5px;
+                    }
+                }
+                .detail {
+                    width: 100%;
+                    padding: 0;
+                    p {
+                        font-size: 10px;
+                        font-size: $px10;
+                    }
+                    a {
+                        margin: 28px 0 0;
+                        font-size: 10px;
+                        font-size: $px10;
+                        img {
+                            width: 14px;
+                            margin: 0 6px 0 0;
+                        }
+                    }
+                }
+            }
+            .pic {
+                text-align: center;
+                height: 150px;
+                background: #333;
+            }
+            .txt {
+                margin: 10px 0 30px;
+                h2 {
+                    font-size: 24px;
+                    font-size: $px24;
+                }
+                p {
+                    font-size: 10px;
+                    font-size: $px10;
+                }
+            }
+        }
+    }
+}

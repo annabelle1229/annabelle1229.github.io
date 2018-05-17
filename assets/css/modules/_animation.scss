@@ -26,3 +26,10 @@
 	80% { transform: translate(2px, -2px) }
 	100% { transform: translate(0) }
 }
+
+// work list mask animation
+@keyframes workListHover {
+	0% { background: url("../images/workList/workListMask.png") no-repeat left center; }
+	50% { background: url("../images/workList/workListMask.png") no-repeat right center; }
+	100% { background: url("../images/workList/workListMask.png") no-repeat left center; }
+}

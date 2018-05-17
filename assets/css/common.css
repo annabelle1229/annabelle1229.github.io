@@ -105,6 +105,22 @@
     -webkit-transform: translate(0);
     transform: translate(0); } }
 
+@-webkit-keyframes workListHover {
+  0% {
+    background: url("../images/workList/workListMask.png") no-repeat left center; }
+  50% {
+    background: url("../images/workList/workListMask.png") no-repeat right center; }
+  100% {
+    background: url("../images/workList/workListMask.png") no-repeat left center; } }
+
+@keyframes workListHover {
+  0% {
+    background: url("../images/workList/workListMask.png") no-repeat left center; }
+  50% {
+    background: url("../images/workList/workListMask.png") no-repeat right center; }
+  100% {
+    background: url("../images/workList/workListMask.png") no-repeat left center; } }
+
 .video-container {
   position: relative;
   padding-bottom: 47.25%;
@@ -517,14 +533,14 @@ nav {
 @media screen and (max-width: 640px) {
   nav .toggle {
     top: 266px;
-    left: 10px; }
+    left: 4px; }
     nav .toggle span {
       background: rgba(255, 255, 255, 0.5); }
     nav .toggle:hover span {
       background: white; }
   .mail {
     top: 283px;
-    right: 24px;
+    right: 18px;
     opacity: 0.5; }
   .mail.on {
     opacity: 1; }
@@ -552,10 +568,10 @@ nav {
 @media screen and (max-width: 375px) {
   nav .toggle {
     top: 241px;
-    left: 10px; }
+    left: 4px; }
   .mail {
     top: 257px;
-    right: 24px; }
+    right: 18px; }
   .nav-wrapper .navContent {
     top: 21%;
     left: 0;
@@ -573,10 +589,10 @@ nav {
 @media screen and (max-width: 320px) {
   nav .toggle {
     top: 206px;
-    left: 10px; }
+    left: 4px; }
   .mail {
     top: 220px;
-    right: 24px; }
+    right: 18px; }
   .nav-wrapper .navContent {
     top: 21%;
     left: 0;
@@ -765,7 +781,7 @@ nav {
   .workList .item {
     width: 60%;
     max-width: 710px;
-    margin: 0 auto 60px; }
+    margin: 0 auto; }
     .workList .item .pic {
       width: 100%;
       min-height: 330px;
@@ -779,7 +795,10 @@ nav {
       -webkit-align-items: center;
       -ms-flex-align: center;
       align-items: center;
-      text-decoration: none; }
+      text-decoration: none;
+      position: relative;
+      background: url("../images/workList/demo.jpg") top center no-repeat;
+      background-size: cover; }
       .workList .item .pic h1 {
         -webkit-transform: translateX(-15%);
         -ms-transform: translateX(-15%);
@@ -789,39 +808,31 @@ nav {
         font-weight: 300;
         font-family: "Monserrat", "Roboto";
         letter-spacing: 0.1em; }
-    .workList .item a {
-      position: relative; }
-      .workList .item a h1 {
-        position: relative; }
-        .workList .item a h1:before, .workList .item a h1:after {
-          display: block;
-          content: attr(data-glitch);
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          opacity: .8; }
-        .workList .item a h1:after {
-          color: #f0f;
-          z-index: -2; }
-        .workList .item a h1:before {
-          color: #0ff;
-          z-index: -1; }
-      .workList .item a:before {
-        content: "";
+      .workList .item .pic:before {
         display: block;
+        content: "";
         position: absolute;
+        top: 0;
+        bottom: 0;
         left: 0;
         right: 0;
-        top: 0;
-        bottom: 0; }
-      .workList .item a:hover h1:before {
-        -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5;
-        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 5; }
-      .workList .item a:hover h1:after {
-        -webkit-animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5;
-        animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 5; }
+        background: url("../images/workList/workListMask.png") no-repeat right center;
+        background-size: cover;
+        opacity: 0;
+        -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+        -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+        transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+      .workList .item .pic:hover:before {
+        background: url("../images/workList/workListMask.png") no-repeat right center;
+        background-size: cover;
+        opacity: 1;
+        -webkit-animation: workListHover 6s infinite linear both;
+        animation: workListHover 6s infinite linear both;
+        -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+        -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+        transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+    .workList .item .name_m {
+      display: none; }
     .workList .item .skill {
       margin: 35px 0 0; }
       .workList .item .skill li {
@@ -841,7 +852,11 @@ nav {
   bottom: 60px;
   margin: 0 auto;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  opacity: 1;
+  -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+  -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
   .arrow span {
     display: block;
     font-size: 14px;
@@ -851,3 +866,428 @@ nav {
   .arrow img {
     width: 12px;
     margin: 0; }
+
+.arrow.hide {
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+  -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+  transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+
+@media screen and (max-width: 640px) {
+  .workList .item {
+    width: 65%;
+    max-width: 420px;
+    margin: 0 auto; }
+    .workList .item .pic {
+      width: 100%;
+      min-height: 214px; }
+      .workList .item .pic h1 {
+        display: none; }
+    .workList .item .name_m {
+      margin: 5px 0 0;
+      padding: 0 10px;
+      display: block;
+      font-size: 34px;
+      font-size: 2.125rem;
+      font-weight: 300;
+      line-height: 1.2;
+      font-family: "Monserrat", "Roboto";
+      letter-spacing: 0.1em; }
+    .workList .item .skill {
+      margin: -5px 0 0;
+      padding: 0 10px; }
+      .workList .item .skill li {
+        font-size: 12px;
+        font-size: 0.75rem;
+        padding: 0 0 0 12px;
+        background: url("../images/icon/dot.png") no-repeat left center;
+        background-size: 5px; }
+  .arrow {
+    left: 0;
+    right: 0;
+    bottom: 24px; }
+    .arrow span {
+      font-size: 12px;
+      font-size: 0.75rem; }
+    .arrow img {
+      width: 9px;
+      margin: 0; } }
+
+@media screen and (max-width: 375px) {
+  .workList .item {
+    width: 65%;
+    max-width: 420px;
+    margin: 0 auto; }
+    .workList .item .pic {
+      width: 100%;
+      min-height: 194px; }
+      .workList .item .pic h1 {
+        display: none; }
+    .workList .item .name_m {
+      margin: 10px 0 0;
+      padding: 0 10px;
+      font-size: 30px;
+      font-size: 1.875rem; }
+    .workList .item .skill {
+      margin: 0;
+      padding: 0 10px; }
+      .workList .item .skill li {
+        font-size: 12px;
+        font-size: 0.75rem;
+        padding: 0 0 0 12px;
+        background: url("../images/icon/dot.png") no-repeat left center;
+        background-size: 5px; }
+  .arrow {
+    left: 0;
+    right: 0;
+    bottom: 24px; }
+    .arrow span {
+      font-size: 12px;
+      font-size: 0.75rem; }
+    .arrow img {
+      width: 9px;
+      margin: 0; } }
+
+@media screen and (max-width: 320px) {
+  .workList .item {
+    width: 65%;
+    max-width: 420px;
+    margin: 0 auto; }
+    .workList .item .pic {
+      width: 100%;
+      min-height: 165px; }
+      .workList .item .pic h1 {
+        display: none; }
+    .workList .item .name_m {
+      margin: 10px 0 0;
+      padding: 0 8px;
+      font-size: 26px;
+      font-size: 1.625rem; }
+    .workList .item .skill {
+      margin: 0;
+      padding: 0 8px; }
+      .workList .item .skill li {
+        font-size: 10px;
+        font-size: 0.625rem;
+        padding: 0 0 0 12px;
+        background: url("../images/icon/dot.png") no-repeat left center;
+        background-size: 5px; }
+  .arrow {
+    left: 0;
+    right: 0;
+    bottom: 20px; }
+    .arrow span {
+      font-size: 10px;
+      font-size: 0.625rem; }
+    .arrow img {
+      width: 8px;
+      margin: 0; } }
+
+.workWrapper {
+  width: 100%; }
+  .workWrapper .keyvisual {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url("../images/workList/demo_w.jpg") no-repeat top center;
+    background-size: cover;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    .workWrapper .keyvisual h1 {
+      width: 85%;
+      text-align: center;
+      font-size: 46px;
+      font-size: 2.875rem;
+      font-weight: 300;
+      font-family: "Monserrat", "Roboto";
+      letter-spacing: 0.1em; }
+    .workWrapper .keyvisual:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: url("../images/grid.png") repeat;
+      opacity: 0.1; }
+    .workWrapper .keyvisual .arrowWork {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 60px;
+      margin: 0 auto;
+      text-align: center;
+      cursor: pointer;
+      opacity: 1;
+      -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+      -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+      transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+      .workWrapper .keyvisual .arrowWork span {
+        display: block;
+        font-size: 14px;
+        font-size: 0.875rem;
+        font-weight: 300;
+        margin: 0 0 3px; }
+      .workWrapper .keyvisual .arrowWork img {
+        width: 12px;
+        margin: 0; }
+    .workWrapper .keyvisual .arrowWork.hide {
+      opacity: 0;
+      -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+      -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
+      transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+  .workWrapper .workContent {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0 40px; }
+    .workWrapper .workContent .mainSection {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      max-width: 720px;
+      margin: 200px auto 100px; }
+      .workWrapper .workContent .mainSection .skill {
+        width: 50%;
+        padding: 0 60px 0 0; }
+        .workWrapper .workContent .mainSection .skill li {
+          line-height: 2;
+          letter-spacing: 0.05em;
+          font-size: 14px;
+          font-size: 0.875rem;
+          padding: 0 0 0 12px;
+          background: url("../images/icon/dot.png") no-repeat left center;
+          background-size: 5px; }
+      .workWrapper .workContent .mainSection .detail {
+        width: 50%;
+        padding: 0 0 0 60px; }
+        .workWrapper .workContent .mainSection .detail p {
+          font-size: 14px;
+          font-size: 0.875rem;
+          color: #a8a8a8; }
+        .workWrapper .workContent .mainSection .detail a {
+          display: inline-block;
+          margin: 60px 0 0;
+          font-size: 14px;
+          font-size: 0.875rem;
+          text-decoration: none;
+          color: #fff; }
+          .workWrapper .workContent .mainSection .detail a img {
+            width: 18px;
+            vertical-align: middle;
+            margin: 0 8px 0 0; }
+    .workWrapper .workContent .pic {
+      text-align: center;
+      height: 600px;
+      background: #333; }
+    .workWrapper .workContent .txt {
+      margin: 20px 0 50px; }
+      .workWrapper .workContent .txt h2 {
+        font-size: 38px;
+        font-size: 2.375rem;
+        font-family: "Monserrat", "Roboto";
+        font-weight: 300;
+        letter-spacing: 0.06em; }
+      .workWrapper .workContent .txt p {
+        font-size: 14px;
+        font-size: 0.875rem;
+        letter-spacing: 0.02em; }
+
+@media screen and (max-width: 1000px) {
+  .workWrapper .workContent {
+    width: 72%; } }
+
+@media screen and (max-width: 640px) {
+  .workWrapper .keyvisual {
+    height: 85vh; }
+    .workWrapper .keyvisual h1 {
+      width: 75%;
+      font-size: 34px;
+      font-size: 2.125rem;
+      line-height: 1.2; }
+    .workWrapper .keyvisual .arrowWork {
+      left: 0;
+      right: 0;
+      bottom: 24px; }
+      .workWrapper .keyvisual .arrowWork span {
+        font-size: 12px;
+        font-size: 0.75rem; }
+      .workWrapper .keyvisual .arrowWork img {
+        width: 9px;
+        margin: 0; }
+  .workWrapper .workContent {
+    width: 65%;
+    max-width: 420px;
+    padding: 0 0 30px; }
+    .workWrapper .workContent .mainSection {
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 120px auto 50px; }
+      .workWrapper .workContent .mainSection .skill {
+        width: 100%;
+        padding: 0;
+        margin: 0 0 20px; }
+        .workWrapper .workContent .mainSection .skill li {
+          font-size: 12px;
+          font-size: 0.75rem;
+          padding: 0 0 0 12px;
+          background: url("../images/icon/dot.png") no-repeat left center;
+          background-size: 5px; }
+      .workWrapper .workContent .mainSection .detail {
+        width: 100%;
+        padding: 0; }
+        .workWrapper .workContent .mainSection .detail p {
+          font-size: 12px;
+          font-size: 0.75rem; }
+        .workWrapper .workContent .mainSection .detail a {
+          margin: 40px 0 0;
+          font-size: 12px;
+          font-size: 0.75rem; }
+          .workWrapper .workContent .mainSection .detail a img {
+            width: 18px;
+            margin: 0 8px 0 0; }
+    .workWrapper .workContent .pic {
+      text-align: center;
+      height: 200px;
+      background: #333; }
+    .workWrapper .workContent .txt {
+      margin: 20px 0 50px; }
+      .workWrapper .workContent .txt h2 {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      .workWrapper .workContent .txt p {
+        font-size: 12px;
+        font-size: 0.75rem; } }
+
+@media screen and (max-width: 375px) {
+  .workWrapper .keyvisual h1 {
+    margin: 5px 0 0;
+    font-size: 30px;
+    font-size: 1.875rem; }
+  .workWrapper .keyvisual .arrowWork {
+    left: 0;
+    right: 0;
+    bottom: 24px; }
+    .workWrapper .keyvisual .arrowWork span {
+      font-size: 12px;
+      font-size: 0.75rem; }
+    .workWrapper .keyvisual .arrowWork img {
+      width: 9px;
+      margin: 0; }
+  .workWrapper .workContent {
+    width: 65%;
+    max-width: 420px; }
+    .workWrapper .workContent .mainSection {
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 110px auto 40px; }
+      .workWrapper .workContent .mainSection .skill {
+        margin: 0 0 20px; }
+        .workWrapper .workContent .mainSection .skill li {
+          font-size: 12px;
+          font-size: 0.75rem;
+          padding: 0 0 0 12px;
+          background: url("../images/icon/dot.png") no-repeat left center;
+          background-size: 5px; }
+      .workWrapper .workContent .mainSection .detail {
+        width: 100%;
+        padding: 0; }
+        .workWrapper .workContent .mainSection .detail p {
+          font-size: 12px;
+          font-size: 0.75rem; }
+        .workWrapper .workContent .mainSection .detail a {
+          margin: 34px 0 0;
+          font-size: 12px;
+          font-size: 0.75rem; }
+          .workWrapper .workContent .mainSection .detail a img {
+            width: 16px;
+            margin: 0 6px 0 0; }
+    .workWrapper .workContent .pic {
+      text-align: center;
+      height: 200px;
+      background: #333; }
+    .workWrapper .workContent .txt {
+      margin: 20px 0 40px; }
+      .workWrapper .workContent .txt h2 {
+        font-size: 30px;
+        font-size: 1.875rem; }
+      .workWrapper .workContent .txt p {
+        font-size: 12px;
+        font-size: 0.75rem; } }
+
+@media screen and (max-width: 320px) {
+  .workWrapper .keyvisual h1 {
+    margin: 15px 0 0;
+    font-size: 26px;
+    font-size: 1.625rem; }
+  .workWrapper .keyvisual .arrowWork {
+    left: 0;
+    right: 0;
+    bottom: 20px; }
+    .workWrapper .keyvisual .arrowWork span {
+      font-size: 10px;
+      font-size: 0.625rem; }
+    .workWrapper .keyvisual .arrowWork img {
+      width: 8px;
+      margin: 0; }
+  .workWrapper .workContent {
+    width: 65%;
+    max-width: 420px; }
+    .workWrapper .workContent .mainSection {
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin: 90px auto 30px; }
+      .workWrapper .workContent .mainSection .skill {
+        margin: 0 0 15px; }
+        .workWrapper .workContent .mainSection .skill li {
+          font-size: 10px;
+          font-size: 0.625rem;
+          padding: 0 0 0 12px;
+          background: url("../images/icon/dot.png") no-repeat left center;
+          background-size: 5px; }
+      .workWrapper .workContent .mainSection .detail {
+        width: 100%;
+        padding: 0; }
+        .workWrapper .workContent .mainSection .detail p {
+          font-size: 10px;
+          font-size: 0.625rem; }
+        .workWrapper .workContent .mainSection .detail a {
+          margin: 28px 0 0;
+          font-size: 10px;
+          font-size: 0.625rem; }
+          .workWrapper .workContent .mainSection .detail a img {
+            width: 14px;
+            margin: 0 6px 0 0; }
+    .workWrapper .workContent .pic {
+      text-align: center;
+      height: 150px;
+      background: #333; }
+    .workWrapper .workContent .txt {
+      margin: 10px 0 30px; }
+      .workWrapper .workContent .txt h2 {
+        font-size: 24px;
+        font-size: 1.5rem; }
+      .workWrapper .workContent .txt p {
+        font-size: 10px;
+        font-size: 0.625rem; } }

@@ -60,7 +60,11 @@ $(function(){
                 // $(".btn_scroll_up, .btn_scroll_up_w").on("click", function(){
                 //     $.fn.fullpage.moveTo(index - 1, 0);
                 // });
+                if (index >= '1' && index <= '7') {
+                    $(".arrow").removeClass("hide");
+                };
                 $(".arrow").on("click", function(){
+                    $(this).addClass("hide");
                     $.fn.fullpage.moveTo(index + 1, 0);
                 });
 
@@ -69,6 +73,7 @@ $(function(){
             },
             onLeave: function(index, nextIndex, direction){
                 // console.log(index);
+                $(".arrow").addClass("hide");
             }
         });
     }

@@ -7,7 +7,7 @@
     .item {
         width: 60%;
         max-width: 710px;
-        margin: 0 auto 60px;
+        margin: 0 auto;
         .pic {
             width: 100%;
             min-height: 330px;
@@ -16,6 +16,9 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            position: relative;
+            background: url("../images/workList/demo.jpg") top center no-repeat;
+            background-size: cover;
             h1 {
                 transform: translateX(-15%);
                 font-size: 46px;
@@ -24,48 +27,28 @@
                 font-family: "Monserrat", "Roboto";
                 letter-spacing: 0.1em;
             }
-        }
-        a { 
-            position: relative;
-            h1 {
-                position: relative;
-                &:before, &:after {
-                    display: block;
-                    content: attr(data-glitch);
-                    position: absolute;
-                    top: 0; left: 0;
-                    height: 100%;
-                    width: 100%;
-                    opacity: .8;
-                }
-                &:after {
-                    // color: #ff2287;
-                    color: #f0f;
-                    z-index: -2;
-                }
-                &:before {
-                    // color: #5c64ff;
-                    color: #0ff;
-                    z-index: -1;
-                }
-            }
             &:before {
-                content:"";
                 display: block;
+                content: "";
                 position: absolute;
-                left: 0; right: 0; top: 0; bottom: 0;
-                // background: rgba(255,255,255,0.5);
-            }      
-            &:hover {
-                h1 {
-                    &:before {
-                        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both 5;
-                    }
-                    &:after {
-                        animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both 5;
-                    }
-                }     
+                top: 0; bottom: 0; left: 0; right: 0;
+                background: url("../images/workList/workListMask.png") no-repeat right center;
+                background-size: cover;
+                opacity: 0;
+                transition: $transition-default;
             }
+            &:hover {
+                &:before {
+                    background: url("../images/workList/workListMask.png") no-repeat right center;
+                    background-size: cover;
+                    opacity: 1;
+                    animation: workListHover 6s infinite linear both;
+                    transition: $transition-default;
+                }
+            }
+        }
+        .name_m {
+            display: none;
         }
         .skill {
             margin: 35px 0 0;
@@ -88,6 +71,8 @@
     margin: 0 auto;
     text-align: center;
     cursor: pointer;
+    opacity: 1;
+    transition: $transition-default;
     span {
         display: block;
         font-size: 14px;
@@ -100,12 +85,144 @@
         margin: 0;
     }
 }
+.arrow.hide {
+    opacity: 0;
+    transition: $transition-default;
+}
 @media screen and (max-width: 640px) {
-	// 414
+    .workList {
+        .item {
+            width: 65%;
+            max-width: 420px;
+            margin: 0 auto;
+            .pic {
+                width: 100%;
+                min-height: 214px;
+                h1 {
+                    display: none;
+                }
+            }
+            .name_m {
+                margin: 5px 0 0;
+                padding: 0 10px;
+                display: block;
+                font-size: 34px;
+                font-size: $px34;
+                font-weight: 300;
+                line-height: 1.2;
+                font-family: "Monserrat", "Roboto";
+                letter-spacing: 0.1em;
+            }
+            .skill {
+                margin: -5px 0 0;
+                padding: 0 10px;
+                li {
+                    font-size: 12px;
+                    font-size: $px12;
+                    padding: 0 0 0 12px;
+                    background: url("../images/icon/dot.png") no-repeat left center;
+                    background-size: 5px;
+                }
+            }
+        }
+    }
+    .arrow {
+        left: 0; right: 0; bottom: 24px;
+        span {
+            font-size: 12px;
+            font-size: $px12;
+        }
+        img {
+            width: 9px;
+            margin: 0;
+        }
+    }
 }
 @media screen and (max-width: 375px) {
-	
+	.workList {
+        .item {
+            width: 65%;
+            max-width: 420px;
+            margin: 0 auto;
+            .pic {
+                width: 100%;
+                min-height: 194px;
+                h1 {
+                    display: none;
+                }
+            }
+            .name_m {
+                margin: 10px 0 0;
+                padding: 0 10px;
+                font-size: 30px;
+                font-size: $px30;
+            }
+            .skill {
+                margin: 0;
+                padding: 0 10px;
+                li {
+                    font-size: 12px;
+                    font-size: $px12;
+                    padding: 0 0 0 12px;
+                    background: url("../images/icon/dot.png") no-repeat left center;
+                    background-size: 5px;
+                }
+            }
+        }
+    }
+    .arrow {
+        left: 0; right: 0; bottom: 24px;
+        span {
+            font-size: 12px;
+            font-size: $px12;
+        }
+        img {
+            width: 9px;
+            margin: 0;
+        }
+    }
 }
 @media screen and (max-width: 320px) {
-	
+	.workList {
+        .item {
+            width: 65%;
+            max-width: 420px;
+            margin: 0 auto;
+            .pic {
+                width: 100%;
+                min-height: 165px;
+                h1 {
+                    display: none;
+                }
+            }
+            .name_m {
+                margin: 10px 0 0;
+                padding: 0 8px;
+                font-size: 26px;
+                font-size: $px26;
+            }
+            .skill {
+                margin: 0;
+                padding: 0 8px;
+                li {
+                    font-size: 10px;
+                    font-size: $px10;
+                    padding: 0 0 0 12px;
+                    background: url("../images/icon/dot.png") no-repeat left center;
+                    background-size: 5px;
+                }
+            }
+        }
+    }
+    .arrow {
+        left: 0; right: 0; bottom: 20px;
+        span {
+            font-size: 10px;
+            font-size: $px10;;
+        }
+        img {
+            width: 8px;
+            margin: 0;
+        }
+    }
 }
