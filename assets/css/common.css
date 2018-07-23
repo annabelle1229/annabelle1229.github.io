@@ -796,9 +796,7 @@ nav {
       -ms-flex-align: center;
       align-items: center;
       text-decoration: none;
-      position: relative;
-      background: url("../images/workList/demo.jpg") top center no-repeat;
-      background-size: cover; }
+      position: relative; }
       .workList .item .pic h1 {
         -webkit-transform: translateX(-15%);
         -ms-transform: translateX(-15%);
@@ -844,6 +842,21 @@ nav {
         padding: 0 0 0 12px;
         background: url("../images/icon/dot.png") no-repeat left center;
         background-size: 5px; }
+  .workList .item.project_suzuki .pic {
+    background: url("../images/workList/suzuki_official.jpg") top center no-repeat;
+    background-size: cover; }
+  .workList .item.project_swift .pic {
+    background: url("../images/workList/suzuki_swift.jpg") top center no-repeat;
+    background-size: cover; }
+  .workList .item.project_sport .pic {
+    background: url("../images/workList/suzuki_sport.jpg") top center no-repeat;
+    background-size: cover; }
+  .workList .item.project_timotei .pic {
+    background: url("../images/workList/timotei.jpg") top center no-repeat;
+    background-size: cover; }
+  .workList .item.project_travemosa .pic {
+    background: url("../images/workList/travemosa.jpg") top center no-repeat;
+    background-size: cover; }
 
 .arrow {
   position: fixed;
@@ -989,8 +1002,6 @@ nav {
     width: 100%;
     height: 100vh;
     position: relative;
-    background: url("../images/workList/demo_w.jpg") no-repeat top center;
-    background-size: cover;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -1049,6 +1060,18 @@ nav {
       -webkit-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
       -o-transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1);
       transition: all 0.5s cubic-bezier(0.3, 0.1, 0.05, 1); }
+  .workWrapper .kv_suzuki {
+    background: url("../images/workList/suzuki_official_w.jpg") no-repeat top center;
+    background-size: cover; }
+  .workWrapper .kv_swift {
+    background: url("../images/workList/suzuki_swift_w.jpg") no-repeat top center;
+    background-size: cover; }
+  .workWrapper .kv_timotei {
+    background: url("../images/workList/timotei_w.jpg") no-repeat top center;
+    background-size: cover; }
+  .workWrapper .kv_travemosa {
+    background: url("../images/workList/travemosa_w.jpg") no-repeat top center;
+    background-size: cover; }
   .workWrapper .workContent {
     width: 80%;
     max-width: 1200px;
@@ -1095,9 +1118,86 @@ nav {
             vertical-align: middle;
             margin: 0 8px 0 0; }
     .workWrapper .workContent .pic {
-      text-align: center;
-      height: 600px;
-      background: #333; }
+      position: relative;
+      margin: 0 auto 20px; }
+      .workWrapper .workContent .pic .in {
+        position: relative;
+        width: 100%;
+        height: 100%; }
+    .workWrapper .workContent .pic.desktop {
+      margin: 0 auto 40px;
+      max-width: 950px; }
+      .workWrapper .workContent .pic.desktop .device-window {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 4.45% 4.45% 26% 4.45%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%; }
+      .workWrapper .workContent .pic.desktop .device-window-frame {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1); }
+      .workWrapper .workContent .pic.desktop .device-desktop-bg svg * {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-width: 1;
+        stroke-miterlimit: 10; }
+    .workWrapper .workContent .pic.browser {
+      max-width: 665px;
+      margin: 0 auto 40px; }
+      .workWrapper .workContent .pic.browser .head-of-brows {
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 30px;
+        border-radius: 12px 12px 0 0; }
+      .workWrapper .workContent .pic.browser .brows-b {
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        margin-top: -5px; }
+      .workWrapper .workContent .pic.browser .brows-b-1 {
+        left: 10px; }
+      .workWrapper .workContent .pic.browser .brows-b-2 {
+        left: 25px; }
+      .workWrapper .workContent .pic.browser .brows-b-3 {
+        left: 40px; }
+    .workWrapper .workContent .pic.mobile {
+      margin: 0 auto 20px;
+      max-width: 252px; }
+      .workWrapper .workContent .pic.mobile .device-window {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 29.45% 7.5% 32% 7.5%;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%; }
+      .workWrapper .workContent .pic.mobile .device-window-frame {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(255, 255, 255, 0.1); }
+      .workWrapper .workContent .pic.mobile .device-mobile-bg svg * {
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.1);
+        stroke-width: 1;
+        stroke-miterlimit: 10; }
     .workWrapper .workContent .txt {
       margin: 20px 0 50px; }
       .workWrapper .workContent .txt h2 {
@@ -1166,9 +1266,7 @@ nav {
             width: 18px;
             margin: 0 8px 0 0; }
     .workWrapper .workContent .pic {
-      text-align: center;
-      height: 200px;
-      background: #333; }
+      text-align: center; }
     .workWrapper .workContent .txt {
       margin: 20px 0 50px; }
       .workWrapper .workContent .txt h2 {
@@ -1282,7 +1380,8 @@ nav {
     .workWrapper .workContent .pic {
       text-align: center;
       height: 150px;
-      background: #333; }
+      background: #333;
+      margin: 0 0 10px; }
     .workWrapper .workContent .txt {
       margin: 10px 0 30px; }
       .workWrapper .workContent .txt h2 {

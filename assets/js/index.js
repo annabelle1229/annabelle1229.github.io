@@ -6,11 +6,10 @@ $(function(){
         inDuration: 500,
         outDuration: 500,
         linkElement: '.animsition-link',
-        // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
         loading: true,
-        loadingParentElement: 'body', //animsition wrapper element
+        loadingParentElement: 'body',
         loadingClass: 'animsition-loading',
-        loadingInner: '', // e.g '<img src="loading.svg" />'
+        loadingInner: '',
         timeout: false,
         timeoutCountdown: 5000,
         onLoadEvent: true,
@@ -47,32 +46,21 @@ $(function(){
 
     function pageAnimate() {
         $('#fullpage').fullpage({
-            // anchors: ['start', 'intro', 'map01', 'map02', 'map03', 'map04', 'map05', 'rotate', 'parking', 'colorRed', 'colorGrey', 'colorWhite', 'colorBlue', 'feature01', 'feature02', 'feature03', 'testDrive'],
-            // menu: '#menu',
             verticalCentered: false,
             resize : true,
             fixedElements: '.content',
-            scrollingSpeed: 2000,
+            scrollingSpeed: 1500,
             easing: 'easeInOutQuad',
             afterLoad: function(anchorLink, index){
-                // if (index == '1') { } else { };
-                // if (index >= '2' && index <= '7') { } else { };
-                // $(".btn_scroll_up, .btn_scroll_up_w").on("click", function(){
-                //     $.fn.fullpage.moveTo(index - 1, 0);
-                // });
-                if (index >= '1' && index <= '7') {
+                if (index >= '1' && index <= '3') {
                     $(".arrow").removeClass("hide");
                 };
                 $(".arrow").on("click", function(){
                     $(this).addClass("hide");
                     $.fn.fullpage.moveTo(index + 1, 0);
                 });
-
-                // intro video animation
-                // $.fn.fullpage.silentMoveTo(3, 0);
             },
             onLeave: function(index, nextIndex, direction){
-                // console.log(index);
                 $(".arrow").addClass("hide");
             }
         });

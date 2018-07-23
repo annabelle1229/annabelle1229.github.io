@@ -4,8 +4,6 @@
         width: 100%;
         height: 100vh;
         position: relative;
-        background: url("../images/workList/demo_w.jpg") no-repeat top center;
-        background-size: cover;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -51,6 +49,22 @@
             opacity: 0;
             transition: $transition-default;
         }
+    }
+    .kv_suzuki {
+        background: url("../images/workList/suzuki_official_w.jpg") no-repeat top center;
+        background-size: cover;
+    }
+    .kv_swift {
+        background: url("../images/workList/suzuki_swift_w.jpg") no-repeat top center;
+        background-size: cover;
+    }
+    .kv_timotei {
+        background: url("../images/workList/timotei_w.jpg") no-repeat top center;
+        background-size: cover;
+    }
+    .kv_travemosa{
+        background: url("../images/workList/travemosa_w.jpg") no-repeat top center;
+        background-size: cover;
     }
     .workContent {
         width: 80%;
@@ -98,10 +112,86 @@
                 }
             }
         }
+        
         .pic {
-            text-align: center;
-            height: 600px;
-            background: #333;
+            position: relative;
+            margin: 0 auto 20px;
+            .in {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        // desktop mac style
+        .pic.desktop {
+            margin: 0 auto 40px;
+            max-width: 950px;
+            .device-window {
+                position: absolute;
+                top: 0; left: 0;
+                padding: 4.45% 4.45% 26% 4.45%;
+                box-sizing: border-box;
+                width: 100%; height: 100%;
+            }
+            .device-window-frame {
+                position: absolute;
+                width: 100%; height: 100%;
+                top: 0; left: 0;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .device-desktop-bg svg * {
+                fill: none;
+                stroke: rgba(255,255,255,0.1);
+                stroke-width: 1;
+                stroke-miterlimit: 10;
+            }
+        }
+        // browser style
+        .pic.browser {
+            max-width: 665px;
+            margin: 0 auto 40px;
+            .head-of-brows {
+                border: 1px solid rgba(255,255,255,0.1);
+                box-sizing: border-box;
+                width: 100%; height: 30px;
+                border-radius: 12px 12px 0 0;
+            }
+            .brows-b {
+                width: 10px; height: 10px;
+                border-radius: 10px;
+                border: 1px solid rgba(255,255,255,0.1);
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                margin-top: -5px;
+            }
+            .brows-b-1 { left: 10px; }
+            .brows-b-2 { left: 25px; }
+            .brows-b-3 { left: 40px; }
+        }
+        // mobile style
+        .pic.mobile {
+            margin: 0 auto 20px;
+            max-width: 252px;
+            .device-window {
+                position: absolute;
+                top: 0; left: 0;
+                padding: 29.45% 7.5% 32% 7.5%;
+                box-sizing: border-box;
+                width: 100%; height: 100%;
+            }
+            .device-window-frame {
+                position: absolute;
+                width: 100%; height: 100%;
+                top: 0; left: 0;
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            .device-mobile-bg svg * {
+                fill: none;
+                stroke: rgba(255,255,255,0.1);
+                stroke-width: 1;
+                stroke-miterlimit: 10;
+            }
         }
         .txt {
             margin: 20px 0 50px;
@@ -188,8 +278,6 @@
             }
             .pic {
                 text-align: center;
-                height: 200px;
-                background: #333;
             }
             .txt {
                 margin: 20px 0 50px;
@@ -336,6 +424,7 @@
                 text-align: center;
                 height: 150px;
                 background: #333;
+                margin: 0 0 10px;
             }
             .txt {
                 margin: 10px 0 30px;
