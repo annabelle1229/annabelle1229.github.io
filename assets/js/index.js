@@ -52,16 +52,32 @@ $(function(){
             scrollingSpeed: 1500,
             easing: 'easeInOutQuad',
             afterLoad: function(anchorLink, index){
-                if (index >= '1' && index <= '3') {
+                // work list arrow
+                if (index >= '1' && index <= '4') {
                     $(".arrow").removeClass("hide");
                 };
                 $(".arrow").on("click", function(){
                     $(this).addClass("hide");
                     $.fn.fullpage.moveTo(index + 1, 0);
                 });
+
+                // work list item enter animation
+                if (index >= '1' && index <= '5') {
+                    var workitemIn = new TimelineLite();
+                    workitemIn.set(".workList .section .item", {opacity: 0, y: 80});
+                    workitemIn.set(".workList .section .item h1", {opacity: 0});
+                    workitemIn.set(".workList .section .item .skill", {opacity: 0});
+
+                    workitemIn.to(".workList .section .item", .5, {opacity: 1, y: 0});
+                    workitemIn.to(".workList .section .item h1", .5, {opacity: 1}, "-=.1");
+                    workitemIn.to(".workList .section .item .skill", .5, {opacity: 1}, "-=.1");
+                };
             },
             onLeave: function(index, nextIndex, direction){
+                // work list hide arrow on leave
                 $(".arrow").addClass("hide");
+                // work list hide item on leave
+                TweenMax.to(".workList .section .item", .5, {opacity: 0, y: 0});
             }
         });
     }
