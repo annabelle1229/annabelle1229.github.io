@@ -857,6 +857,9 @@ nav {
   .workList .item.project_travemosa .pic {
     background: url("../images/workList/travemosa.jpg") top center no-repeat;
     background-size: cover; }
+  .workList .item.project_ikea .pic {
+    background: url("../images/workList/ikea.jpg") top center no-repeat;
+    background-size: cover; }
 
 .arrow {
   position: fixed;
@@ -1071,6 +1074,9 @@ nav {
     background-size: cover; }
   .workWrapper .kv_travemosa {
     background: url("../images/workList/travemosa_w.jpg") no-repeat top center;
+    background-size: cover; }
+  .workWrapper .kv_ikea {
+    background: url("../images/workList/ikea_w.jpg") no-repeat top center;
     background-size: cover; }
   .workWrapper .workContent {
     width: 80%;

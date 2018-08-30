@@ -74,9 +74,8 @@ $(function(){
                 };
             },
             onLeave: function(index, nextIndex, direction){
-                // work list hide arrow on leave
+                // work list hide arrow, item on leave
                 $(".arrow").addClass("hide");
-                // work list hide item on leave
                 TweenMax.to(".workList .section .item", .5, {opacity: 0, y: 0});
             }
         });
